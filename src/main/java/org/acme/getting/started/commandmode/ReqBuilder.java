@@ -1,8 +1,9 @@
 package org.acme.getting.started.commandmode;
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
 
-import org.apache.commons.lang3.StringUtils;
+import static org.apache.commons.lang3.StringUtils.*;
 
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
@@ -20,49 +21,51 @@ public class ReqBuilder {
 	private static final String _BODY = "_BODY:";
 	private static final String _STAUSCODE = "_STAUSCODE:";
 	
-	Req request;
+	private Req request;
+	
+    private AtomicLong sequence = new AtomicLong(0);
 	
 	@Inject
-	ReqExecutors executors;
+	Storage executors;
 	
 	@Inject
     Validator validator;
 	
 	public void append(String line) {
-		if (StringUtils.startsWith(line, PREFIX)) {
+		if (startsWith(line, PREFIX)) {
 			
 			if (Objects.nonNull(request)) {
 				
 				if (isValid(request)) {
-					executors.append(request);	
+					executors.add(request);	
 				} else {
 					System.out.println("cannot execute actions because is not valid: " + request);
 				}				
 				
 			}			
 			
-			request = new Req();			
+			request = new Req(sequence.incrementAndGet());			
 			
-		} else if (StringUtils.startsWith(line, HEADERS)) {
-			request.setHeaders(StringUtils.substringAfter(line, HEADERS));
+		} else if (startsWith(line, HEADERS)) {
+			request.setHeaders(trim(substringAfter(line, HEADERS)));
 			
-		} else if (StringUtils.startsWith(line, BODY)) {
-			request.setBody(StringUtils.substringAfter(line, BODY));
+		} else if (startsWith(line, BODY)) {
+			request.setBody(trim(substringAfter(line, BODY)));
 			
-		} else if (StringUtils.startsWith(line, METHOD)) {
-			request.setMethod(StringUtils.substringAfter(line, METHOD));
+		} else if (startsWith(line, METHOD)) {
+			request.setMethod(trim(substringAfter(line, METHOD)));
 			
-		} else if (StringUtils.startsWith(line, URL)) {
-			request.setUrl(StringUtils.substringAfter(line, URL));
+		} else if (startsWith(line, URL)) {
+			request.setUrl(trim(substringAfter(line, URL)));
 			
-		} else if (StringUtils.startsWith(line, _HEADERS)) {
-			request.setExpectedHeaders(StringUtils.substringAfter(line, _HEADERS));
+		} else if (startsWith(line, _HEADERS)) {
+			request.setExpectedHeaders(trim(substringAfter(line, _HEADERS)));
 			
-		} else if (StringUtils.startsWith(line, _BODY)) {
-			request.setExpectedBody(StringUtils.substringAfter(line, _BODY));
+		} else if (startsWith(line, _BODY)) {
+			request.setExpectedBody(trim(substringAfter(line, _BODY)));
 			
-		} else if (StringUtils.startsWith(line, _STAUSCODE)) {
-			request.setExpectedStatuscode(StringUtils.substringAfter(line, _STAUSCODE));
+		} else if (startsWith(line, _STAUSCODE)) {
+			request.setExpectedStatuscode(trim(substringAfter(line, _STAUSCODE)));
 			
 		} else {
 			
