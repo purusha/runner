@@ -1,4 +1,4 @@
 $> sdk use java 17.0.9-amzn
 $> mvn clean install
 $> java -jar target/quarkus-app/quarkus-run.jar AA BBB CCCC 1234
-$> 
+$> mvn clean package && java -jar target/quarkus-app/quarkus-run.jar -f etc/example1

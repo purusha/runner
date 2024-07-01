@@ -27,14 +27,15 @@ public class Storage {
 		System.out.println("enqueue: " + req);
 		requests.add(req);
 		
-		bus.<Long>requestAndAwait("greeting", req.getIdentifier());
+		bus.<Long>requestAndAwait("run", req.getIdentifier());
 	}
 	
-	@ConsumeEvent("greeting")          
+	@ConsumeEvent("run")          
 	public Uni<Long> consume(Long id) {
-	    Req request = requests.stream()
+	    final Req request = requests.stream()
     		.filter(req -> req.getIdentifier() == id)
-    		.findFirst().get();
+    		.findFirst()
+    		.get();
 	    
 	    try {
 	    	Long sleep = (long) (1000 * (new Random().nextInt(10)));

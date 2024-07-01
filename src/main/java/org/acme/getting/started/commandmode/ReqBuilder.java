@@ -26,7 +26,7 @@ public class ReqBuilder {
     private AtomicLong sequence = new AtomicLong(0);
 	
 	@Inject
-	Storage executors;
+	Storage storage;
 	
 	@Inject
     Validator validator;
@@ -37,7 +37,7 @@ public class ReqBuilder {
 			if (Objects.nonNull(request)) {
 				
 				if (isValid(request)) {
-					executors.add(request);	
+					storage.add(request);	
 				} else {
 					System.out.println("cannot execute actions because is not valid: " + request);
 				}				
