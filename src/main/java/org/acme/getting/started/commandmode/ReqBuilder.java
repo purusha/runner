@@ -34,14 +34,12 @@ public class ReqBuilder {
 	public void append(String line) {
 		if (startsWith(line, PREFIX)) {
 			
-			if (Objects.nonNull(request)) {
-				
+			if (Objects.nonNull(request)) {				
 				if (isValid(request)) {
 					executor.handle(sequence.incrementAndGet(), request);	
-				} else {
-					System.out.println("cannot execute actions because is not valid: " + request);
-				}				
-				
+				} else {					
+					executor.skip(sequence.incrementAndGet(), request);
+				}								
 			}			
 			
 			request = new Req();			

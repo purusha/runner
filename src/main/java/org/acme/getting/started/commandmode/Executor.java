@@ -27,35 +27,49 @@ public class Executor {
 	private final List<Req> requests = new ArrayList<>();
 	
 	public void handle(Long identifier, Req req) {
-		System.out.println("enqueue: " + req);
+		System.out.println("handle: " + req);
 		requests.add(req);
 		
+		async(identifier, req, true);
+	}
+	
+	public void skip(Long identifier, Req req) {
+		System.out.println("skip: " + req);
+		
+		async(identifier, req, false);
+	}
+
+	private void async(Long identifier, Req req, boolean isValid) {
 		CompletableFuture
 			.supplyAsync(
-				() -> consume(identifier, req), executor
+				() -> isValid ? consume(identifier, req) : buildNotValid(identifier), 
+				executor
 			)
 			.thenAccept(res -> {
 				writer.append(buildReport(identifier, req, res));
 			});
 	}
-
+	
 	private List<String> buildReport(Long identifier, Req req, Res res) {
 		final List<String> report = new ArrayList<>();
 		
 		try {
-			System.out.println("handled: " + identifier + " [" + Thread.currentThread() + "] ==> " + res);
-			
 			report.add(ReqBuilder.PREFIX);
-			report.add("request");
-			report.add(mapper.writeValueAsString(req));
-			report.add("response");
-			report.add(mapper.writeValueAsString(res));
+			report.add("Req: " + mapper.writeValueAsString(req));
+			report.add("Res: " + mapper.writeValueAsString(res));
 			report.add(ReqBuilder.PREFIX);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return report;
+	}
+	
+	private Res buildNotValid(Long identifier) {	    
+		final Res res = new Res();
+	    res.setBody(String.valueOf(identifier) + " must not be executed because the req is not correct");
+	    
+	    return res;		
 	}
 	
 	private Res consume(Long identifier, Req req) {	    
@@ -68,7 +82,10 @@ public class Executor {
 			e.printStackTrace();
 		}
 	    
-	    return new Res();
+	    final Res res = new Res();
+	    res.setBody(String.valueOf(identifier));
+	    
+	    return res;
 	}
 
 }
