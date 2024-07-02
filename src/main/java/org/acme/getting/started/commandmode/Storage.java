@@ -7,9 +7,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
-import io.quarkus.vertx.ConsumeEvent;
-import io.smallrye.mutiny.Uni;
-import io.vertx.mutiny.core.eventbus.EventBus;
+import org.eclipse.microprofile.context.ManagedExecutor;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -17,7 +16,7 @@ import jakarta.inject.Inject;
 public class Storage {
 	
 	@Inject
-    EventBus bus; 
+	ManagedExecutor executor;
 	
 	private final List<Req> requests = new ArrayList<>();
 	
@@ -27,11 +26,10 @@ public class Storage {
 		System.out.println("enqueue: " + req);
 		requests.add(req);
 		
-		bus.<Long>requestAndAwait("run", req.getIdentifier());
+		executor.submit(() -> consume(req.getIdentifier()));
 	}
 	
-	@ConsumeEvent("run")          
-	public Uni<Long> consume(Long id) {
+	private void consume(Long id) {
 	    final Req request = requests.stream()
     		.filter(req -> req.getIdentifier() == id)
     		.findFirst()
@@ -39,7 +37,7 @@ public class Storage {
 	    
 	    try {
 	    	Long sleep = (long) (1000 * (new Random().nextInt(10)));
-	    	System.out.println("sleep for " + sleep + " msec for " + request);
+	    	System.out.println("sleep for " + sleep + " msec for " + request.getIdentifier());
 	    	
 			Thread.sleep(sleep);
 		} catch (Exception e) {
@@ -47,9 +45,7 @@ public class Storage {
 		}
 	    
 	    responses.put(id, UUID.randomUUID());
-	    System.out.println("dequeue: " + id);
-	    
-	    return Uni.createFrom().item(id);
+	    System.out.println("dequeue: " + id + " [" + Thread.currentThread() + "]");
 	}
 
 }

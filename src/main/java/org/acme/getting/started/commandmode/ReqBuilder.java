@@ -21,9 +21,9 @@ public class ReqBuilder {
 	private static final String _BODY = "_BODY:";
 	private static final String _STAUSCODE = "_STAUSCODE:";
 	
-	private Req request;
-	
     private AtomicLong sequence = new AtomicLong(0);
+    
+    private Req request;	
 	
 	@Inject
 	Storage storage;

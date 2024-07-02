@@ -1,0 +1,300 @@
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200
+---
+HEADERS: a=1, b=2
+BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+METHOD: POST
+URL: http://ciaomamma.com/say
+_HEADERS: a=1, b=2
+_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 201
+---
+HEADERS: a=1, b=2
+METHOD: GET
+URL: http://ciaomamma.com/say/123
+_HEADERS: a=1, b=2
+_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
+_STAUSCODE: 200

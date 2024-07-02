@@ -21,10 +21,11 @@ public class RunCommand implements Runnable {
 
 	@Override
 	public void run() {
-		try (Stream<String> stream = Files.lines(Paths.get(file))) {			
-			stream.forEach(line -> builder.append(line));
+		try (Stream<String> stream = Files.lines(Paths.get(file))) {	
 			
+			stream.forEach(line -> builder.append(line));
 			builder.append(ReqBuilder.PREFIX);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
