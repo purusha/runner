@@ -54,8 +54,8 @@ public class Executor {
 		
 		try {
 			report.add(ReqBuilder.PREFIX);
-			report.add("Req: " + mapper.writeValueAsString(req));
-			report.add("Res: " + mapper.writeValueAsString(res));
+			report.add("Req[" + String.valueOf(identifier) + "]: " + mapper.writeValueAsString(req));
+			report.add("Res[" + String.valueOf(identifier) + "]: " + mapper.writeValueAsString(res));
 			report.add(ReqBuilder.PREFIX);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,7 +66,7 @@ public class Executor {
 	
 	private Res notValidRes(Long identifier) {	    
 		final Res res = new Res();
-	    res.setBody(String.valueOf(identifier) + " must not be executed because request is not correct");
+	    //res.setBody("not valid");
 	    
 	    return res;		
 	}

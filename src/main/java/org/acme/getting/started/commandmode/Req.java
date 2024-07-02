@@ -11,7 +11,7 @@ public class Req {
 	//XXX obbligatorio se method == POST or PUT
 	private String body;
 	
-	//XXX valori accettabili ... GET, POST, PUT and DELETE
+	//XXX valori accettabili ... GET, POST, PUT and DELETE (upper o lowercase)
 	@NotBlank
 	private String method;
 	

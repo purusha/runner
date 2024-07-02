@@ -21,7 +21,7 @@ public class ReportWriter {
 	public ReportWriter() {
 		try {
 			final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			final File file = new File(dateFormat.format(new Date()) + ".txt");
+			final File file = new File(dateFormat.format(new Date()) + ".report");
 			file.createNewFile();
 			
 			path = file.toPath();
