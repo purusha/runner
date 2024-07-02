@@ -24,11 +24,8 @@ public class Executor {
 	@Inject
 	ObjectMapper mapper;
 	
-	private final List<Req> requests = new ArrayList<>();
-	
 	public void handle(Long identifier, Req req) {
 		System.out.println("handle: " + req);
-		requests.add(req);
 		
 		async(identifier, req, true);
 	}
@@ -46,11 +43,11 @@ public class Executor {
 				executor
 			)
 			.thenAccept(res -> {
-				writer.append(buildReport(identifier, req, res));
+				writer.append(report(identifier, req, res));
 			});
 	}
 	
-	private List<String> buildReport(Long identifier, Req req, Res res) {
+	private List<String> report(Long identifier, Req req, Res res) {
 		final List<String> report = new ArrayList<>();
 		
 		try {
