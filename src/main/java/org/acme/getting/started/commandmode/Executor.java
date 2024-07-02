@@ -13,20 +13,20 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 @ApplicationScoped
-public class Storage {
+public class Executor {
 	
 	@Inject
 	ManagedExecutor executor;
 	
 	@Inject
-	ReportGenerator generator;
+	ReportWriter writer;
 	
 	@Inject
 	ObjectMapper mapper;
 	
 	private final List<Req> requests = new ArrayList<>();
 	
-	public void add(Long identifier, Req req) {
+	public void handle(Long identifier, Req req) {
 		System.out.println("enqueue: " + req);
 		requests.add(req);
 		
@@ -35,11 +35,11 @@ public class Storage {
 				() -> consume(identifier, req), executor
 			)
 			.thenAccept(res -> {
-				generator.append(printInfos(identifier, req, res));
+				writer.append(buildReport(identifier, req, res));
 			});
 	}
 
-	private List<String> printInfos(Long identifier, Req req, Res res) {
+	private List<String> buildReport(Long identifier, Req req, Res res) {
 		final List<String> report = new ArrayList<>();
 		
 		try {

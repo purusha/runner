@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
 import jakarta.inject.Singleton;
 
 @Singleton
-public class ReportGenerator {
+public class ReportWriter {
 
 	private Path path;
 
-	public ReportGenerator() {
+	public ReportWriter() {
 		try {
 			final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			final File file = new File(dateFormat.format(new Date()) + ".txt");

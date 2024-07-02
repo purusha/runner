@@ -26,7 +26,7 @@ public class ReqBuilder {
     private Req request;	
 	
 	@Inject
-	Storage storage;
+	Executor executor;
 	
 	@Inject
     Validator validator;
@@ -37,7 +37,7 @@ public class ReqBuilder {
 			if (Objects.nonNull(request)) {
 				
 				if (isValid(request)) {
-					storage.add(sequence.incrementAndGet(), request);	
+					executor.handle(sequence.incrementAndGet(), request);	
 				} else {
 					System.out.println("cannot execute actions because is not valid: " + request);
 				}				
