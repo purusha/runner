@@ -37,14 +37,14 @@ public class ReqBuilder {
 			if (Objects.nonNull(request)) {
 				
 				if (isValid(request)) {
-					storage.add(request);	
+					storage.add(sequence.incrementAndGet(), request);	
 				} else {
 					System.out.println("cannot execute actions because is not valid: " + request);
 				}				
 				
 			}			
 			
-			request = new Req(sequence.incrementAndGet());			
+			request = new Req();			
 			
 		} else if (startsWith(line, HEADERS)) {
 			request.setHeaders(trim(substringAfter(line, HEADERS)));

@@ -5,10 +5,7 @@ import lombok.Data;
 
 @Data
 public class Req {
-	
-	//rappresenta l'identificativo della singola richiesta nel file
-	private final Long identifier;
-	
+		
 	private String headers;
 	
 	//XXX obbligatorio se method == POST or PUT

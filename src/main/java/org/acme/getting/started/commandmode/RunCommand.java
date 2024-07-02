@@ -23,6 +23,7 @@ public class RunCommand implements Runnable {
 	public void run() {
 		try (Stream<String> stream = Files.lines(Paths.get(file))) {	
 			
+			builder.append(ReqBuilder.PREFIX);
 			stream.forEach(line -> builder.append(line));
 			builder.append(ReqBuilder.PREFIX);
 			
