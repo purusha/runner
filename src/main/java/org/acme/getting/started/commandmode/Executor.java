@@ -2,7 +2,6 @@ package org.acme.getting.started.commandmode;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 
 import org.eclipse.microprofile.context.ManagedExecutor;
@@ -24,6 +23,9 @@ public class Executor {
 	@Inject
 	ObjectMapper mapper;
 	
+	@Inject
+	HttpCaller caller;
+	
 	public void handle(Long identifier, Req req) {
 		System.out.println("handle: " + req);
 		
@@ -39,7 +41,7 @@ public class Executor {
 	private void async(Long identifier, Req req, boolean isValid) {
 		CompletableFuture
 			.supplyAsync(
-				() -> isValid ? consume(identifier, req) : buildNotValid(identifier), 
+				() -> isValid ? caller.consume(identifier, req) : notValidRes(identifier), 
 				executor
 			)
 			.thenAccept(res -> {
@@ -62,27 +64,11 @@ public class Executor {
 		return report;
 	}
 	
-	private Res buildNotValid(Long identifier) {	    
+	private Res notValidRes(Long identifier) {	    
 		final Res res = new Res();
-	    res.setBody(String.valueOf(identifier) + " must not be executed because the req is not correct");
+	    res.setBody(String.valueOf(identifier) + " must not be executed because request is not correct");
 	    
 	    return res;		
 	}
 	
-	private Res consume(Long identifier, Req req) {	    
-	    try {
-	    	Long sleep = (long) (1000 * (new Random().nextInt(10)));
-	    	System.out.println("sleep for " + sleep + " msec for " + identifier);
-	    	
-			Thread.sleep(sleep);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	    
-	    final Res res = new Res();
-	    res.setBody(String.valueOf(identifier));
-	    
-	    return res;
-	}
-
 }

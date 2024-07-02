@@ -1,15 +1,8 @@
----
-HEADERS: a=1, b=2
-BODY: {"field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
-METHOD: POST
-URL: http://ciaomamma.com/say
-_HEADERS: a=1, b=2
-_BODY: {"id": "100", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
-_STAUSCODE: 201
----
-HEADERS: a=1, b=2
 METHOD: GET
-URL: http://ciaomamma.com/say/123
-_HEADERS: a=1, b=2
-_BODY: {"id": "101", "field1": 123, "field2": true, "field3": "ciao mamma guarda come mi diverto", "field4": 3.1415019283}
-_STAUSCODE: 200
+URL: https://ipapi.co/json
+---
+METHOD: GET
+URL: https://ipapi.co/json
+_HEADERS: content-type=application/json, vary=Host, vary=origin
+_BODY: {"ip":"94.33.57.77","network":"94.33.56.0/21","version":"IPv4","city":"Milan","region":"Lombardy","region_code":"25","country":"IT","country_name":"Italy","country_code":"IT","country_code_iso3":"ITA","country_capital":"Rome","country_tld":".it","continent_code":"EU","in_eu":true,"postal":"20128","latitude":45.4722,"longitude":9.1922,"timezone":"Europe/Rome","utc_offset":"+0200","country_calling_code":"+39","currency":"EUR","currency_name":"Euro","languages":"it-IT,de-IT,fr-IT,sc,ca,co,sl","country_area":301230.0,"country_population":60431283,"asn":"AS8612","org":"Tiscali SpA"}
+_STAUSCODE: 201
