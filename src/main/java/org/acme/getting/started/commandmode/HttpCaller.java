@@ -22,7 +22,7 @@ public class HttpCaller {
 	ObjectMapper mapper;
 	
 	public HttpCaller() {
-		httpClient = HttpClient.newBuilder().build();
+		httpClient = HttpClient.newBuilder().sslContext(Config.sslContext).build();
 	}
 	
 	public Res consume(Long identifier, Req req) {	 
@@ -44,16 +44,16 @@ public class HttpCaller {
 			}break;
 		}
 		
-		final HttpRequest httpRequest = builder.build();
-		
 		try {
-			final HttpResponse<String> response = httpClient.send(httpRequest, BodyHandlers.ofString());
+			
+			final HttpResponse<String> response = httpClient.send(builder.build(), BodyHandlers.ofString());
 			
 			res.setBody(mapper.readTree(response.body()));
 			res.setStatuscode(response.statusCode());
 			res.setHeaders(response.headers().map());
+			
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("error calling [" + identifier + "]: " + e.getMessage());
 		}
 		
 		return res;

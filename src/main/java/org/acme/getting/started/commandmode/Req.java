@@ -16,6 +16,7 @@ public class Req {
 	@NotBlank
 	private String method;
 	
+	//XXX deve sempre iniziare con http or https
 	@NotBlank
 	private String url;
 	

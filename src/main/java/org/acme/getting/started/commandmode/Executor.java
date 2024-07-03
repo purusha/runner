@@ -27,13 +27,13 @@ public class Executor {
 	HttpCaller caller;
 	
 	public void handle(Long identifier, Req req) {
-		System.out.println("handle: " + req);
+		System.out.println("handle [" + identifier + "]");
 		
 		async(identifier, req, true);
 	}
 	
 	public void skip(Long identifier, Req req) {
-		System.out.println("skip: " + req);
+		System.out.println("skip [" + identifier + "]");
 		
 		async(identifier, req, false);
 	}
@@ -58,7 +58,7 @@ public class Executor {
 			report.add("Res[" + String.valueOf(identifier) + "]: " + mapper.writeValueAsString(res));
 			report.add(ReqBuilder.PREFIX);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("error report [" + identifier + "]: " + e.getMessage());
 		}
 		
 		return report;
