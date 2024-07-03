@@ -1,5 +1,7 @@
 package org.acme.getting.started.commandmode;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -7,6 +9,10 @@ import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpRequest.Builder;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.Arrays;
+
+import org.apache.commons.httpclient.HttpParser;
+import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -45,6 +51,14 @@ public class HttpCaller {
 		}
 		
 		try {
+			Arrays
+				.stream(
+					HttpParser.parseHeaders(toStream(req.getHeaders()), "UTF-8")
+				)
+				.forEach(h -> 
+					builder.header(h.getName(), h.getValue())
+					//System.out.println("header [" + identifier + "]: " + h.getName() + " => " + h.getValue())
+				);
 			
 			final HttpResponse<String> response = httpClient.send(builder.build(), BodyHandlers.ofString());
 			
@@ -53,9 +67,13 @@ public class HttpCaller {
 			res.setHeaders(response.headers().map());
 			
 		} catch (Exception e) {
-			System.out.println("error calling [" + identifier + "]: " + e.getMessage());
+			System.out.println("error calling [" + identifier + "]: " + e);
 		}
 		
 		return res;
 	}
+	
+	private InputStream toStream(String str) {
+		return StringUtils.isBlank(str) ? InputStream.nullInputStream() : new ByteArrayInputStream(str.getBytes());
+    }	
 }
