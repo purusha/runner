@@ -14,17 +14,18 @@ import jakarta.inject.Inject;
 @ApplicationScoped
 public class Executor {
 	
+	private final ManagedExecutor executor;
+	private final ReportWriter writer;
+	private final ObjectMapper mapper;
+	private final HttpCaller caller;
+
 	@Inject
-	ManagedExecutor executor;
-	
-	@Inject
-	ReportWriter writer;
-	
-	@Inject
-	ObjectMapper mapper;
-	
-	@Inject
-	HttpCaller caller;
+	public Executor(ManagedExecutor executor, ReportWriter writer, ObjectMapper mapper, HttpCaller caller) {
+		this.executor = executor;
+		this.writer = writer;
+		this.mapper = mapper;
+		this.caller = caller;
+	}
 	
 	public void handle(Long identifier, Req req) {
 		System.out.println("handle [" + identifier + "]");
@@ -38,6 +39,13 @@ public class Executor {
 		async(identifier, req, false);
 	}
 
+	/**
+	 * Executes an asynchronous operation based on the validity of the request.
+	 * 
+	 * @param identifier The unique identifier for the request.
+	 * @param req The request object to be processed.
+	 * @param isValid A boolean flag indicating whether the request is valid.
+	 */
 	private void async(Long identifier, Req req, boolean isValid) {
 		CompletableFuture
 			.supplyAsync(
